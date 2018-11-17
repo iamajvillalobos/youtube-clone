@@ -1,0 +1,22 @@
+.video-details > .video-title {
+  font-weight: bold;
+}
+
+.video-details > .video-description {
+  padding-top: 0.5rem;
+}
+
+.video-detail > .video-player {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.video-player iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

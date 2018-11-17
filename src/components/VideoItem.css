@@ -1,0 +1,24 @@
+.video-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.video-item:last-child {
+  border-bottom: none;
+}
+
+.video-item:hover {
+  background-color: #f8f9fa;
+}
+
+.video-item > .video-title {
+  color: #202833;
+}
+
+.video-item > .channel-name {
+  color: #929fb1;
+}
