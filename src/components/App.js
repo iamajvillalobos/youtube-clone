@@ -3,9 +3,18 @@ import youtube from "../apis/youtube";
 import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import { Provider } from "./AppContext";
 
 class App extends React.Component {
-  state = { videos: [], selectedVideo: null };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      videos: [],
+      selectedVideo: null,
+      onVideoSelect: this.onVideoSelect
+    };
+  }
 
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
@@ -33,12 +42,11 @@ class App extends React.Component {
             <div className="column is-two-thirds">
               <VideoDetail video={this.state.selectedVideo} />
             </div>
-            <div className="column">
-              <VideoList
-                videos={this.state.videos}
-                onVideoSelect={this.onVideoSelect}
-              />
-            </div>
+            <Provider value={this.state}>
+              <div className="column">
+                <VideoList videos={this.state.videos} />
+              </div>
+            </Provider>
           </div>
         </div>
       </div>
