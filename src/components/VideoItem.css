@@ -7,6 +7,10 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
+.video-item:first-child {
+  padding-top: 0;
+}
+
 .video-item:last-child {
   border-bottom: none;
 }
